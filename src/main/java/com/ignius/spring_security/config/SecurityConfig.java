@@ -30,16 +30,4 @@ public class SecurityConfig {
                 .formLogin(Customizer.withDefaults())
                 .build();
     }
-
-    @Bean
-    public ReactiveUserDetailsService reactiveUserDetailsService(){
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("ignius")
-                .password("ignius")
-                .authorities("ADMIN")
-                .roles("ADMIN")
-                .build();
-
-        return new MapReactiveUserDetailsService(user);
-    }
 }
