@@ -12,6 +12,6 @@ public class ServerHealthController {
 
     @GetMapping
     public Mono<ResponseEntity<String>> health() {
-        return Mono.just(ResponseEntity.ok("OK"));
+        return Mono.just(ResponseEntity.ok("<div><h1>Spring Security Server Health</h1> <p>Server health is good <p></div>"));
     }
 }

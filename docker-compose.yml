@@ -1,0 +1,17 @@
+services:
+  spring_security_service:
+    container_name: spring_security_cont
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - spring_security_ntk
+
+
+networks:
+    spring_security_ntk:
+      name: spring-security-network
+      driver: bridge
