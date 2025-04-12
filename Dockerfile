@@ -13,8 +13,8 @@ COPY src src
 # build the application
 RUN ./mvnw install -DskipTests
 
-# Extracts the layer from the built JAR for better caching
-RUN mkdir -p target/dependency && (cd target/dependency; jar -xf **/*.jar)
+# Extract the layers from the built JAR for better caching
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 # Stage 2: Run
 FROM openjdk:17-slim
