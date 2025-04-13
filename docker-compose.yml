@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     ports:
-      - "8080:8080"
+      - "8081:8080"
     networks:
       - spring_security_ntk
     depends_on:
@@ -15,7 +15,7 @@ services:
 
   postgresql_service:
     container_name: postgres-sql-container
-    build: postgres
+    image: postgres
     restart: always
     shm_size: 128mb
     ports:
